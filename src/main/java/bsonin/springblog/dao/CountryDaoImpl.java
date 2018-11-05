@@ -3,19 +3,20 @@ package bsonin.springblog.dao;
 import bsonin.springblog.model.Country;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Arrays;
+import java.util.ArrayList;
 
 @Repository
 public class CountryDaoImpl implements CountryDao {
-    // TODO: Populate countries here
+
     private static final List<Country> ALL_COUNTRIES = Arrays.asList(
-            new Country("U.S.A.", null, null, null),
-            new Country("China", null, null, null),
-            new Country("Russia", null, null, null),
-            new Country("India", null, null, null),
-            new Country("Canada", null, null, null)
+            new Country("U.S.A.", 325000000L, "Washington D.C.", new HashSet<>(Arrays.asList("No Official Language"))),
+            new Country("China", 1400000000L, "Beijing", new HashSet<>(Arrays.asList("Standard Chinese"))),
+            new Country("Russia", 144000000L, "Moscow", new HashSet<>(Arrays.asList("Russian"))),
+            new Country("India", 1324000000L, "New Delhi", new HashSet<>(Arrays.asList("Hindi", "English"))),
+            new Country("Canada", 37000000L, "Ottawa", new HashSet<>(Arrays.asList("English", "French")))
     );
 
     public List<Country> getAllCountries()
